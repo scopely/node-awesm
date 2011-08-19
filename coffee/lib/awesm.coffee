@@ -10,10 +10,10 @@ class AweSM
       throw new Error('Api Key missing')
 
   createEndpoint : (url, channel, tool, metaObject = null, callback, format = 'json', v = 3 ) ->
-    @callAweSM('/url', url, channel, tool, metaObject = null, format, v, callback)
+    @callAweSM('/url', url, channel, tool, metaObject, format, v, callback)
 
   createStaticEndpoint : (url, channel, tool, metaObject = null, callback, format = 'json', v = 3 ) ->
-    @callAweSM('/url/static', url, channel, tool, metaObject = null, format, v, callback)
+    @callAweSM('/url/static', url, channel, tool, metaObject, format, v, callback)
 
 
   callAweSM : (path, url, channel, tool, metaObject = null, format = 'json', v = 3, callback) ->
@@ -32,6 +32,7 @@ class AweSM
       tool    : tool
     }
     params[key] = value for own key, value of metadata
+
     utils.getHTTPResponse(AweSM.API_URL, path, params, (err, result) ->
       if format == 'json'
         result = JSON.parse(result)
