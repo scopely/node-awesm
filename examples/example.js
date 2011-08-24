@@ -1,13 +1,10 @@
 (function() {
   var aw, awesm, md;
   awesm = require('../index');
-  aw = new awesm.AweSM('[key]');
+  aw = new awesm.AweSM('c0e8429833f0b1440615b35f06f59ead60882efb318237d7420de7e68922357f');
   md = new awesm.Metadata();
-  md.campaign = 'email-campaign';
-  aw.createEndpoint('http://facebook.com', 'awesm-client', 'tool', md, function(err, result) {
+  md.campaign = 'test-campaign';
+  aw.createStaticEndpoint('http://www.alexeypro.com', 'test123', '8wlO7r', md, function(err, result) {
     return console.log(err, result);
   });
-  aw.createEndpoint('http://facebook.com', 'awesm-client', '[tool]', null, function(err, result) {
-    return console.log(err, result);
-  }, 'txt');
 }).call(this);
