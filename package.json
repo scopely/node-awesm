@@ -2,7 +2,6 @@
     "name": "node-awesm"
   , "version": "0.0.1"
   , "description": "Wrapper for the awe.sm "
-  , "homepage": "http://github.com"
   , "keywords": ["awe.sm", "links", "shorten", "awesome"]
   , "author": "Gabriel Teodoru <gabriel@scopely.com>"
   , "contributors": [
